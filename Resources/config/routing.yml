@@ -1,0 +1,19 @@
+videl_details_homepage:
+    pattern:  /
+    defaults: { _controller: VidelDetailsBundle:Default:index }
+
+videl_details_fetch_page:
+    pattern:	/{page}
+    defaults: { _controller: VidelDetailsBundle:Default:page }
+
+videl_details_crud_page_config:
+    resource: "@VidelDetailsBundle/Resources/config/routing/page.yml"
+    prefix: /admin/page_crud
+
+videl_details_crud_menu_config:
+    resource: "@VidelDetailsBundle/Resources/config/routing/menu.yml"
+    prefix: /admin/menu_crud
+
+videl_admin_index:
+    pattern: /admin/
+    defaults: { _controller: VidelDetailsBundle:Admin:index }

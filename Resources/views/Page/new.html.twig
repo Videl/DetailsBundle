@@ -1,0 +1,26 @@
+{% extends 'VidelDetailsBundle::base.html.twig' %}
+
+{% block title %}> Creation of a page{% endblock %}
+
+{% form_theme form 'VidelDetailsBundle:Form:fields.html.twig' %}
+
+{% block body %}
+
+<h1>Page creation</h1>
+
+<form action="{{ path('page_create') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <p>
+        <button type="submit">Create</button>
+    </p>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('page') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+
+{% endblock %}

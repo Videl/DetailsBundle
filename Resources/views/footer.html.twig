@@ -1,0 +1,40 @@
+
+
+<div class="row-fluid">
+<div class="span4">
+	<address>
+		<strong>{{ yourname }}</strong><br>
+		<a href="mailto:{{ youremail }}">{{ youremail }}</a><br />
+		France<br />
+	</address>
+	<img src="{{ asset('bundles/videldetails/img/videl.png') }}" alt="Videl" class="img-circle" />
+</div>
+<div class="myfooter span4">
+	<ul>
+		<li class="enhanced">Pages</li>
+            {% for menu in all_pages %}
+            {% if app.request.get('page') == menu.link.slug %}
+              <li>{{ menu.link.title }}</li>
+            {% else %}
+              <li><a href="{{path('videl_details_fetch_page', {'page': menu.link.slug})}}">
+                {{ menu.link.title }}</a>
+              </li>
+            {% endif %}
+            {% endfor %}
+	</ul>
+</div>
+<div class="myfooter span4">
+	<ul>
+		<li class="enhanced">Network</li>
+		<li><i class="picture-google"></i> <a href="https://plus.google.com/u/1/104441459481622674817">Google+</a></li>
+		<li><i class="picture-twitter"></i> <a href="https://twitter.com/Videled">Twitter</a></li>
+		<li><i class="picture-github"></i> <a href="https://github.com/">GitHub</a></li>
+		<li class="muted"><a href="{{ path('videl_admin_index') }}">Administration</a></li>
+	</ul>
+</div>
+</div>
+
+
+<div class="footer">
+	<big><small>&copy;</small> {{ yourname }} <small>{{bornin}}-{{ "now"|date('Y') }}, {{ "now"|date('Y') - bornin }} years lived</small></big></p>
+</div>

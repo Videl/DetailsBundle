@@ -1,0 +1,30 @@
+menu_crud:
+    pattern:  /
+    defaults: { _controller: "VidelDetailsBundle:Menu:index" }
+
+menu_crud_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "VidelDetailsBundle:Menu:show" }
+
+menu_crud_new:
+    pattern:  /new
+    defaults: { _controller: "VidelDetailsBundle:Menu:new" }
+
+menu_crud_create:
+    pattern:  /create
+    defaults: { _controller: "VidelDetailsBundle:Menu:create" }
+    requirements: { _method: post }
+
+menu_crud_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "VidelDetailsBundle:Menu:edit" }
+
+menu_crud_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "VidelDetailsBundle:Menu:update" }
+    requirements: { _method: post }
+
+menu_crud_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "VidelDetailsBundle:Menu:delete" }
+    requirements: { _method: post }

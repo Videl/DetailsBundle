@@ -1,0 +1,23 @@
+
+
+      <div class="masthead">
+        <h1 class="muted">{{ yourname }}</h1>
+        <div class="navbar">
+          <div class="navbar-inner">
+            <ul class="nav">
+              <li class="enhanced"><a href="{{path('videl_details_homepage')}}">Home</a></li>
+            {% for menu in all_pages %}
+            {% if app.request.get('page') == menu.link.slug %}
+              <li class="active enhanced"><a href="{{path('videl_details_fetch_page', {'page': menu.link.slug})}}">
+                {{ menu.link.title }}</a>
+              </li>
+            {% else %}
+              <li class="enhanced"><a href="{{path('videl_details_fetch_page', {'page': menu.link.slug})}}">
+                {{ menu.link.title }}</a>
+              </li>
+            {% endif %}
+            {% endfor %}
+            </ul>
+          </div>
+        </div><!-- /.navbar -->
+      </div>

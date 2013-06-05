@@ -1,0 +1,19 @@
+{% extends 'VidelDetailsBundle::base.html.twig' %}
+
+{% block title %}> {{page.title}}{% endblock %}
+
+{% block body %}
+  <div class="row-fluid">
+  	<div class="span6">
+	  <h2>{{ page.title }}</h2>
+	  {{ page.text|markdown|raw }}
+	</div>
+	<div class="span6">
+		<img src="{{ asset('bundles/videldetails/img/man.png') }}" alt="picture" />
+	</div>
+  </div>
+{% endblock %}
+
+{% block updatedfield %}
+<p class="text-right muted">Page last updated on {{page.lastupdate|date('M d')}}</p>
+{% endblock %}

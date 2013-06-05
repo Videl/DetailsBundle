@@ -1,0 +1,13 @@
+parameters:
+#    videl_details.example.class: Videl\DetailsBundle\Example
+
+services:
+#    videl_details.example:
+#        class: %videl_details.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+    videl_details.twig.pages_extension:
+        class: Videl\DetailsBundle\Twig\PagesExtension
+        arguments:
+            doctrine: "@doctrine"
+        tags:
+            - { name: twig.extension }

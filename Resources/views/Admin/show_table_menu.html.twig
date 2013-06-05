@@ -1,0 +1,37 @@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Position</th>
+            <th>Name of page</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in menus %}
+        <tr>
+            <td><a href="{{ path('menu_crud_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.position }}</td>
+            <td>{{ entity.link.title }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('menu_crud_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('menu_crud_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<ul>
+    <li>
+        <a href="{{ path('menu_crud_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>

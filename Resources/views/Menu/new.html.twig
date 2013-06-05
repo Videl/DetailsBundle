@@ -1,0 +1,27 @@
+{% extends 'VidelDetailsBundle::base.html.twig' %}
+
+{% block title %}> Creation of a new Menu{% endblock %}
+
+{% form_theme form 'VidelDetailsBundle:Form:fields.html.twig' %}
+
+{% block body %}
+
+<h1>Menu creation</h1>
+
+<form action="{{ path('menu_crud_create') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <p>
+        <button type="submit">Create</button>
+    </p>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('menu_crud') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+
+
+{% endblock %}

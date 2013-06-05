@@ -1,0 +1,13 @@
+{% extends 'VidelDetailsBundle::base.html.twig' %}
+
+{% block title %}> ADMIN > View all contents{% endblock %}
+
+{% block body %}
+<h1>Admin</h1>
+
+<h2>List of Menus</h2>
+{% include 'VidelDetailsBundle:Admin:show_table_menu.html.twig' %}
+
+<h2>List of pages</h2>
+{% include 'VidelDetailsBundle:Admin:show_table_page.html.twig' %}
+{% endblock %}

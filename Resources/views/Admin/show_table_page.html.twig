@@ -1,0 +1,42 @@
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Slug</th>
+            <th>Lastupdate</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in pages %}
+        <tr>
+            <td><a href="{{ path('page_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.title }}</td>
+            <td>{{ entity.slug }}</td>
+            <td>{% if entity.lastupdate %}{{ entity.lastupdate|date('Y-m-d H:i:s') }}{% endif %}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('page_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('videl_details_fetch_page', {'page': entity.slug}) }}">public link</a>
+                    <li>
+                        <a href="{{ path('page_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<ul>
+    <li>
+        <a href="{{ path('page_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>
